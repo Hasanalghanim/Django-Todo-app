@@ -1,0 +1,12 @@
+{% extends 'todo/base.html'%} {% block content %} {{ error }}
+
+<h1>{{ todo.title }}</h1>
+
+<form method="POST">
+  {{form.as_p}} {% csrf_token %}
+  <button type="submit">Update</button>
+</form>
+
+<a href="{% url 'currenttodos' %} "> Return </a>
+
+{% endblock %}
